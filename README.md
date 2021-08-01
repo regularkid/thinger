@@ -4,3 +4,4 @@ Personal assistant app that does things... simply! Runs commands, maintains pers
 # setup
 pip install pywin32
 pip install keyboard
+pip install pyinstaller

@@ -19,14 +19,24 @@ def HideWindow(keyEvent):
     if (win32gui.GetForegroundWindow() == hwnd):
         win32gui.ShowWindow(hwnd, win32con.SW_HIDE)
 
-# Init
-hwnd = win32gui.GetForegroundWindow()
-keyboard.add_hotkey('ctrl+shift+j', ShowWindow, suppress=True)
-keyboard.on_press_key('esc', HideWindow)
+if __name__ == '__main__':
+    # Init
+    hwnd = win32gui.GetForegroundWindow()
+    keyboard.add_hotkey('ctrl+shift+j', ShowWindow, suppress=True)
+    keyboard.on_press_key('esc', HideWindow)
 
-# Main loop
-done = False
-while (not done):
-    userInput = input("> ")
-    if (userInput == "q"):
-        done = True
+    # def complete(text,state):
+    #     print("Hello")
+    #     results = ["example",None]
+    #     return results[state]
+
+    # import readline
+    # readline.parse_and_bind( 'tab: complete' )
+    # readline.set_completer(complete)
+
+    # Main loop
+    done = False
+    while (not done):
+        userInput = input("> ")
+        if (userInput == "q"):
+            done = True
