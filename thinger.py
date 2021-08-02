@@ -29,7 +29,12 @@ class Command():
 
     def Run(self):
         for line in self.lines:
-            print(line)
+            tokens = line.split(" ")
+            subCommandName = tokens[0]
+            if subCommandName.lower() == "print":
+                print(" ".join(tokens[1:]))
+            else:
+                print("Unknown command: " + subCommandName)
 
 class ThingerShell(cmd.Cmd):
     intro = "Welcome to the thinger shell. Type help or ? to list commands.\n"
